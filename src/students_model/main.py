@@ -3,9 +3,13 @@ import os
 
 if __name__ == "__main__":
 
+    # Get the absolute path of the directory where the script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.abspath(os.path.join(script_dir, '..', '..'))
+
     # Define file paths
-    input_filepath = 'python_scripts/students_model/resources/students_data.csv'
-    output_filepath = 'python_scripts/students_model/resources/cleaned_students.csv'
+    input_filepath = os.path.join(project_root, 'data', 'students_data.csv')
+    output_filepath = os.path.join(project_root, 'data', 'cleaned_students.csv')
 
     if os.path.exists(output_filepath):
         print("Cleaned data already exists.")
